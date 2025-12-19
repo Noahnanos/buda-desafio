@@ -8,9 +8,9 @@ client = TestClient(app)
 def test_read_root():
     response = client.get("/")
     assert response.status_code == 200
-    assert response.json() == {"message": "Welcome to the Buda.com Portafolio API. Visit /docs for documentation."}
+    assert response.json() == {"message": "Welcome to the Buda.com Portfolio API. Visit /docs for documentation."}
 
-def test_calculate_portafolio_integration():
+def test_calculate_portfolio_integration():
     """
     Integration test mocking the external Buda API call to avoid network dependency during test.
     """
@@ -40,13 +40,13 @@ def test_calculate_portafolio_integration():
 
     with patch('requests.get', side_effect=side_effect):
         payload = {
-            "portafolio": {
+            "portfolio": {
                 "BTC": 0.5,
                 "ETH": 2.0
             },
             "fiat_currency": "CLP"
         }
-        response = client.post("/api/v1/portafolio/value", json=payload)
+        response = client.post("/api/v1/portfolio/value", json=payload)
         
         assert response.status_code == 200
         data = response.json()
@@ -62,7 +62,7 @@ def test_invalid_fiat_validation():
         "portfolio": {"BTC": 1},
         "fiat_currency": "INVALID"
     }
-    response = client.post("/api/v1/portafolio/value", json=payload)
+    response = client.post("/api/v1/portfolio/value", json=payload)
     assert response.status_code == 422  
 
 def test_service_market_not_found():

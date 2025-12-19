@@ -30,11 +30,11 @@ class BudaService:
             return 0.0
 
     @staticmethod
-    def calculate_portafolio_value(portafolio: Dict[str, float], fiat: str) -> Tuple[float, Dict[str, float]]:
+    def calculate_portfolio_value(portfolio: Dict[str, float], fiat: str) -> Tuple[float, Dict[str, float]]:
         total_value = 0.0
         breakdown = {}
 
-        for crypto, amount in portafolio.items():
+        for crypto, amount in portfolio.items():
             crypto_upper = crypto.upper()
             
             if crypto_upper == fiat.upper():
