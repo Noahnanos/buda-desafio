@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+requests
+pydantic>=2.8.0
+pytest
+httpx
+python-dotenv
+pytest-cov
