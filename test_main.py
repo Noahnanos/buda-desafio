@@ -11,9 +11,6 @@ def test_read_root():
     assert response.json() == {"message": "Welcome to the Buda.com Portfolio API. Visit /docs for documentation."}
 
 def test_calculate_portfolio_integration():
-    """
-    Integration test mocking the external Buda API call to avoid network dependency during test.
-    """
     mock_response_btc = {
         "ticker": {
             "last_price": ["50000000.0", "CLP"]

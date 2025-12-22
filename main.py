@@ -10,9 +10,7 @@ app = FastAPI(
 
 @app.post("/api/v1/portfolio/value", response_model=PortfolioValue)
 async def calculate_portfolio(request: PortfolioRequest):
-    """
-    Calculate the total value of a cryptocurrency portfolio in a specific fiat currency.
-    """
+    
     fiat = request.fiat_currency.upper()
     
     total_value, breakdown = BudaService.calculate_portfolio_value(request.portfolio, fiat)
