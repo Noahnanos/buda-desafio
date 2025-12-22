@@ -2,6 +2,9 @@
 
 REST API to calculate the valuation of a cryptocurrency portfolio using real-time prices from Buda.com.
 
+## Live Demo
+🚀 **Deployed on Vercel:** [https://buda-desafio.vercel.app/docs](https://buda-desafio.vercel.app/docs)
+
 ## Features
 - Valuation in CLP, PEN, and COP.
 - Real-time price fetching from Buda.com API v2.
